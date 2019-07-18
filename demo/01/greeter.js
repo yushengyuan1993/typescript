@@ -1,5 +1,5 @@
 function greeter(person) {
     return "Hello, " + person;
 }
-var user = "Guys!";
+var user = 0;
 document.write(greeter(user));
