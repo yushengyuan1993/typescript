@@ -4,4 +4,4 @@ function greeter(person: string) {
 
 let user = "Guys!";
 
-document.body.innerHTML = greeter(user);
+document.write(greeter(user));

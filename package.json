@@ -1,0 +1,22 @@
+{
+  "name": "typescript",
+  "version": "0.0.1",
+  "description": "typescript 初体验",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yushengyuan1993/typescript.git"
+  },
+  "keywords": [
+    "typescript"
+  ],
+  "author": "https://www.yvshare.cn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yushengyuan1993/typescript/issues"
+  },
+  "homepage": "https://github.com/yushengyuan1993/typescript#readme"
+}

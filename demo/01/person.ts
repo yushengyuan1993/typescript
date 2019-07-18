@@ -3,10 +3,11 @@ interface Person {
   lastName: string;
 }
 
-function greeter1(person: Person) {
-  return "Hello, " + person.firstName + " " + person.lastName;
+function greeter(person: Person) {
+  return "hi, " + person.firstName + " " + person.lastName;
 }
 
-let users = { firstName: "Jack", lastName: "Ma" };
+let o = { firstName: "Jack", lastName: "Ma" };
 
-document.body.innerHTML = greeter1(users);
+let sentence = greeter(o);
+document.write(sentence);
