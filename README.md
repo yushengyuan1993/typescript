@@ -1,1 +1,1 @@
-#### typescript startup
+#### typescript 初体验
