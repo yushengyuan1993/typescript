@@ -9,12 +9,25 @@ interface ArrayConstructor {
   from(arrayLike: any, mapFn?: any, thisArg?: any): Array<any>
 }
 
-declare var jQuery: (selector: string) => any; // 声明变量
-
 console.log('%c # 1. ---------------------------------------------- ', 'background:#EEE');
 
-let res4 = jQuery('.app');
-console.log(res4);
+let re1 = jQuery('.app');
+console.log(re1);
 
-let _res4 = Array.from(res4);
-console.log(_res4);
+let _res1 = Array.from(re1);
+console.log(_res1);
+
+console.log('%c # 2. ---------------------------------------------- ', 'background:#EEE');
+
+let re2 = $('.app');
+console.log(re2);
+
+let _res2 = Array.from(re2);
+console.log(_res2);
+
+console.log('%c # 3. ---------------------------------------------- ', 'background:#EEE');
+
+let res3 = $('.app', (t) => {console.warn(t)});
+console.log(res3);
+
+
