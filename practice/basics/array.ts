@@ -54,7 +54,7 @@ console.log('%c # 7. ---------------------------------------------- ', 'backgrou
 
 // Array-like Object
 function fn (arr: Array<number>): void {
-  let args: IArguments  = arguments;
+  let args: IArguments = arguments;
 
   console.log('args: ');
   console.log(args);

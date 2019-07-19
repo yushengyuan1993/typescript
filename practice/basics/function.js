@@ -24,13 +24,13 @@ var sum3 = function (arr) {
 var _sum3 = sum3([1, 3, 5, 7, 9]);
 console.log(_sum3);
 console.log('%c # 4. ---------------------------------------------- ', 'background:#EEE');
-var fn;
-fn = function (s, t) {
+var fn1;
+fn1 = function (s, t) {
     return s == t;
 };
 // 类型“1”的参数不能赋给类型“string”的参数。
-// fn('str', 1);
-var result = fn('str', 'str');
+// fn1('str', 1);
+var result = fn1('str', 'str');
 console.log(result);
 console.log('%c # 5. ---------------------------------------------- ', 'background:#EEE');
 // 可选参数
