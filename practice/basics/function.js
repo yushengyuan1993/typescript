@@ -45,7 +45,7 @@ var tomcat = buildName('Tom', 'Cat');
 console.log(tomcat);
 var tom = buildName('Tom');
 console.log(tom);
-console.log('%c # 5. ---------------------------------------------- ', 'background:#EEE');
+console.log('%c # 6. ---------------------------------------------- ', 'background:#EEE');
 // 参数默认值
 // TypeScript 会将添加了默认值的参数识别为 可选参数
 function buildName2(firstName, lastName) {
@@ -56,3 +56,34 @@ var name1 = buildName2('Tom');
 console.log(name1);
 var name2 = buildName2('Tom', 'Jackson');
 console.log(name2);
+console.log('%c # 7. ---------------------------------------------- ', 'background:#EEE');
+// 剩余参数
+// `rest` 参数只能是最后一个参数
+var push = function (arr) {
+    var items = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        items[_i - 1] = arguments[_i];
+    }
+    items.forEach(function (el) {
+        arr.push(el);
+    });
+    return arr;
+};
+var arr7 = push([1], 3, 5, 7, '9');
+console.log(arr7);
+console.log('%c # 8. ---------------------------------------------- ', 'background:#EEE');
+function reverse(x) {
+    if (typeof x === 'number') {
+        return Number(x.toString().split('').reverse().join(''));
+    }
+    else if (typeof x === 'string') {
+        return x.split('').reverse().join('');
+    }
+    else {
+        return x;
+    }
+}
+var res1 = reverse(2019);
+console.log(res1);
+var res2 = reverse('上海自来水来自海上.');
+console.log(res2);

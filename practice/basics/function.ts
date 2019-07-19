@@ -37,15 +37,15 @@ console.log('%c # 4. ---------------------------------------------- ', 'backgrou
 interface SearchFn {
   (first: string, last: string): boolean;
 }
-let fn: SearchFn;
-fn = function (s, t) {
+let fn1: SearchFn;
+fn1 = function (s, t) {
   return  s == t;
 }
 
 // 类型“1”的参数不能赋给类型“string”的参数。
-// fn('str', 1);
+// fn1('str', 1);
 
-let result = fn('str', 'str');
+let result = fn1('str', 'str');
 console.log(result);
 
 console.log('%c # 5. ---------------------------------------------- ', 'background:#EEE');
@@ -80,6 +80,37 @@ console.log(name1);
 let name2 = buildName2('Tom', 'Jackson');
 console.log(name2);
 
-console.log('%c # 6. ---------------------------------------------- ', 'background:#EEE');
+console.log('%c # 7. ---------------------------------------------- ', 'background:#EEE');
 
+// 剩余参数
+// `rest` 参数只能是最后一个参数
 
+let push = (arr: any[], ...items: any[]): any[] => {
+  items.forEach((el) => {
+    arr.push(el);
+  })
+  return arr;
+}
+let arr7 = push([1], 3, 5, 7, '9');
+console.log(arr7);
+
+console.log('%c # 8. ---------------------------------------------- ', 'background:#EEE');
+
+// 重载
+
+function reverse (x: number): number; // 函数定义/声明
+function reverse (y: string): string; // 函数定义/声明
+function reverse (x: number | string): number | string { // 函数的实现
+  if (typeof x === 'number') {
+    return Number(x.toString().split('').reverse().join(''));
+  } else if (typeof x === 'string') {
+    return x.split('').reverse().join('');
+  } else {
+    return x;
+  }
+}
+let res1 = reverse(2019);
+console.log(res1);
+
+let res2 = reverse('上海自来水来自海上.');
+console.log(res2);
