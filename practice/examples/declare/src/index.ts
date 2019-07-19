@@ -26,8 +26,17 @@ let _res2 = Array.from(re2);
 console.log(_res2);
 
 console.log('%c # 3. ---------------------------------------------- ', 'background:#EEE');
-
+// function
 let res3 = $('.app', (t) => {console.warn(t)});
 console.log(res3);
 
+console.log('%c # 4. ---------------------------------------------- ', 'background:#EEE');
+// class
+let he = new People('Tom Jackson');
+he.greeter();
 
+
+console.log('%c # 5. ---------------------------------------------- ', 'background:#EEE');
+// enum
+let directions = [Directions.Top, Directions.Right, Directions.Bottom, Directions.Left];
+console.log(directions);

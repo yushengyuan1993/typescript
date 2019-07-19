@@ -15,5 +15,14 @@ console.log(re2);
 var _res2 = Array.from(re2);
 console.log(_res2);
 console.log('%c # 3. ---------------------------------------------- ', 'background:#EEE');
+// function
 var res3 = $('.app', function (t) { console.warn(t); });
 console.log(res3);
+console.log('%c # 4. ---------------------------------------------- ', 'background:#EEE');
+// class
+var he = new People('Tom Jackson');
+he.greeter();
+console.log('%c # 5. ---------------------------------------------- ', 'background:#EEE');
+// enum
+var directions = [Directions.Top, Directions.Right, Directions.Bottom, Directions.Left];
+console.log(directions);
