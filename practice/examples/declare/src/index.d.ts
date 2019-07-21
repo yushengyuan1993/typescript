@@ -1,4 +1,5 @@
 /**
+ * @description 1. ----------------------------------------------------------------------------
  * @description 声明全局变量
  * @description declare var
  */
@@ -11,6 +12,7 @@ declare const jQuery: (selector: string) => any; // 推荐使用
 
 
 /**
+ * @description 2. ----------------------------------------------------------------------------
  * @description 声明全局方法
  * @description declare function
  */
@@ -22,6 +24,7 @@ declare function $(selector: string, callback?: any): any;
 
 
 /**
+ * @description 3. ----------------------------------------------------------------------------
  * @description 声明全局类
  * @description declare class
  */
@@ -34,6 +37,7 @@ declare class People {
 
 
 /**
+ * @description 4. ----------------------------------------------------------------------------
  * @description 声明枚举类型
  * @description declare enum
  */
@@ -46,6 +50,7 @@ declare enum Directions {
 
 
 /**
+ * @description 5. ----------------------------------------------------------------------------
  * @description 声明命名空间
  * @description declare namespace
  */
