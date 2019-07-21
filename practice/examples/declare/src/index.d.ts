@@ -1,6 +1,6 @@
 /**
  * @description 1. ----------------------------------------------------------------------------
- * @description 声明全局变量
+ * @description 声明 全局变量
  * @description declare var
  */
 // declare var jQuery: (selector: string) => any;
@@ -13,7 +13,7 @@ declare const jQuery: (selector: string) => any; // 推荐使用
 
 /**
  * @description 2. ----------------------------------------------------------------------------
- * @description 声明全局方法
+ * @description 声明 全局方法
  * @description declare function
  */
 // declare function $(selector: string): any;
@@ -25,7 +25,7 @@ declare function $(selector: string, callback?: any): any;
 
 /**
  * @description 3. ----------------------------------------------------------------------------
- * @description 声明全局类
+ * @description 声明 全局类
  * @description declare class
  */
 declare class People {
@@ -38,7 +38,7 @@ declare class People {
 
 /**
  * @description 4. ----------------------------------------------------------------------------
- * @description 声明枚举类型
+ * @description 声明 枚举类型
  * @description declare enum
  */
 declare enum Directions {
@@ -51,7 +51,7 @@ declare enum Directions {
 
 /**
  * @description 5. ----------------------------------------------------------------------------
- * @description 声明命名空间
+ * @description 声明 命名空间
  * @description declare namespace
  */
 // 表示全局变量是一个对象，包含很多子属性
@@ -75,3 +75,9 @@ declare namespace obj {
     type
   }
 }
+
+
+/**
+ * @description 6. ----------------------------------------------------------------------------
+ * @description 声明 嵌套的命名空间
+ */
