@@ -66,7 +66,7 @@ declare namespace NAMESPACE {
     name: string;
     greeter: string;
     constructor (name: string, greeter: string)
-    say(name: string, greeter: string): void;
+    say(): void;
   }
 
   enum Animals {

@@ -33,5 +33,10 @@ var directions = [
 console.log(directions);
 console.log('%c # 5. ---------------------------------------------- ', 'background:#EEE');
 console.log(NAMESPACE);
+// let namespace1 = NAMESPACE.People;
+// console.log(namespace1);
+// let namespace2 = new namespace1('yushengyuan', 'hi');
+// namespace2();
 var namespace1 = new NAMESPACE.People('yushengyuan', 'hi');
-// namespace1.say('yy', 'ss');
+console.log(namespace1);
+namespace1.say();
