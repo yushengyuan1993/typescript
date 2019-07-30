@@ -2,7 +2,7 @@ let NAMESPACE = {
   VERSERION: '0.0.1',
   title: 'namespace',
   warn: function () {
-    console.warn(`welcome to ${this.title}`)
+    console.warn(`welcome to ${this.title}`);
   },
   People: function (name, greeter) {
     this.name = name;
