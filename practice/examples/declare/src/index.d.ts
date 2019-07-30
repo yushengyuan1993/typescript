@@ -55,7 +55,7 @@ declare enum Directions {
  * @description declare namespace
  */
 // 表示全局变量是一个对象，包含很多子属性
-declare namespace obj {
+declare namespace NAMESPACE {
   const VERSERION: string;
 
   let title: string;
@@ -72,7 +72,7 @@ declare namespace obj {
   enum Animals {
     Name,
     Food,
-    type
+    Type
   }
 }
 

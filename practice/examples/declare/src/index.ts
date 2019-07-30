@@ -9,7 +9,7 @@ interface ArrayConstructor {
   from(arrayLike: any, mapFn?: any, thisArg?: any): Array<any>
 }
 
-console.log('%c # 1. ---------------------------------------------- ', 'background:#EEE');
+console.log('%c # 1.1. ---------------------------------------------- ', 'background:#EEE');
 
 let re1 = jQuery('.app');
 console.log(re1);
@@ -17,7 +17,7 @@ console.log(re1);
 let _res1 = Array.from(re1);
 console.log(_res1);
 
-console.log('%c # 2. ---------------------------------------------- ', 'background:#EEE');
+console.log('%c # 1.2. ---------------------------------------------- ', 'background:#EEE');
 
 let re2 = $('.app');
 console.log(re2);
@@ -25,18 +25,29 @@ console.log(re2);
 let _res2 = Array.from(re2);
 console.log(_res2);
 
-console.log('%c # 3. ---------------------------------------------- ', 'background:#EEE');
+console.log('%c # 2. ---------------------------------------------- ', 'background:#EEE');
 // function
 let res3 = $('.app', (t) => {console.warn(t)});
 console.log(res3);
 
-console.log('%c # 4. ---------------------------------------------- ', 'background:#EEE');
+console.log('%c # 3. ---------------------------------------------- ', 'background:#EEE');
 // class
 let he = new People('Tom Jackson');
 he.greeter();
 
 
-console.log('%c # 5. ---------------------------------------------- ', 'background:#EEE');
+console.log('%c # 4. ---------------------------------------------- ', 'background:#EEE');
 // enum
-let directions = [Directions.Top, Directions.Right, Directions.Bottom, Directions.Left];
+let directions = [
+  Directions.Top,
+  Directions.Right,
+  Directions.Bottom,
+  Directions.Left,
+];
 console.log(directions);
+
+
+console.log('%c # 5. ---------------------------------------------- ', 'background:#EEE');
+console.log(NAMESPACE)
+let namespace1 = new NAMESPACE.People('yushengyuan', 'hi');
+namespace1.say('yy', 'ss');
