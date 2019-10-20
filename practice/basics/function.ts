@@ -98,9 +98,9 @@ console.log('%c # 8. ---------------------------------------------- ', 'backgrou
 
 // 重载
 
-function reverse (x: number): number; // 函数定义/声明
-function reverse (y: string): string; // 函数定义/声明
-function reverse (x: number | string): number | string { // 函数的实现
+function reverse (x: number): number; // 函数的定义
+function reverse (y: string): string; // 函数的定义
+function reverse (x: number | string): string | number { // 函数的实现
   if (typeof x === 'number') {
     return Number(x.toString().split('').reverse().join(''));
   } else if (typeof x === 'string') {

@@ -1,6 +1,7 @@
 /**
  * @description 类型断言
  * @description 类型断言 不是 类型转换，断言成一个联合类型中不存在的类型是不允许的
+ * 类型断言的用法，在需要断言的变量前加上 <Type> 即可。
  */
 
 console.log('%c # 1. ---------------------------------------------- ', 'background:#EEE');
@@ -20,11 +21,17 @@ console.log('类型“number”上不存在属性“length”');
 console.log('%c # 2. ---------------------------------------------- ', 'background:#EEE');
 
 function getLength (sth: string | number): number {
-  if (( <string>sth ).length) {
-    return ( <string>sth ).length;
+  if ( (<string>sth).length) {
+    return (<string>sth).length;
   } else {
     return sth.toString().length;
   }
+
+  // if ( (sth as string).length ) {
+  //   return (sth as string).length;
+  // } else {
+  //   return sth.toString().length;
+  // }
 }
 // function getLength (sth: any): number {
 //   if (sth.length) {
