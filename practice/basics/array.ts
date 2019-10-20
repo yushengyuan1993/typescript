@@ -23,12 +23,12 @@ arr2.push('hello');
 console.log(arr2);
 
 console.log('%c # 3. ---------------------------------------------- ', 'background:#EEE');
-
+// 数组泛型
 let arr3: Array<number> = [1, 3, 5, 7];
 console.log(arr3);
 
 console.log('%c # 4. ---------------------------------------------- ', 'background:#EEE');
-
+// 使用接口表示数组（不推荐，使用起来麻烦）
 interface NumberArr {
   [index: number]: number;
 }
@@ -52,7 +52,7 @@ console.log(arr6);
 
 console.log('%c # 7. ---------------------------------------------- ', 'background:#EEE');
 
-// Array-like Object
+// 类数组 (Array-like Object)
 function fn (arr: Array<number>): void {
   let args: IArguments = arguments;
 
@@ -62,3 +62,19 @@ function fn (arr: Array<number>): void {
   console.log(arr);
 }
 fn([1, 3, 5, 7]);
+// 等同于
+function sum () {
+  let args: {
+    [index: number]: number;
+    length: number;
+    callee: Function;
+  } = arguments;
+
+  return args;
+}
+
+// function xxx (): any {
+//   let args: number[] = arguments;
+
+//   return args;
+// }

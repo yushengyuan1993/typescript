@@ -39,7 +39,7 @@ interface SearchFn {
 }
 let fn1: SearchFn;
 fn1 = function (s, t) {
-  return  s == t;
+  return  s === t;
 }
 
 // 类型“1”的参数不能赋给类型“string”的参数。
