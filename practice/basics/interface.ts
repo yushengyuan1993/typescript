@@ -8,7 +8,9 @@ interface Person {
 let tom: Person = {
   name: 'Tom',
   age: 25,
-  gender: 'male'
+  gender: 'male',
+  // grade: true, // error
+  grade: 3
 };
 
 let _age = tom.age;    // number
@@ -24,18 +26,18 @@ console.log('----------------------------------------------------------');
  * @description 只读类型
  */
 interface Animal {
-  readonly name: string;
+  readonly name: string; // name 是只读属性
   age: number;
   height: number;
 }
 
 let cat: Animal = {
-  name: 'cat',
+  name: 'cat', // 只读属性只允许在创建的阶段被赋值
   age: 2,
   height: 36
 }
 
-// cat.name = 'dog';  
+// cat.name = 'dog';  赋值是会报错
 // Cannot assign to 'name' because it is a read-only property.
 
 let _catName = cat.name;
