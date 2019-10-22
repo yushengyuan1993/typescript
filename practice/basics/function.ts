@@ -97,7 +97,6 @@ console.log(arr7);
 console.log('%c # 8. ---------------------------------------------- ', 'background:#EEE');
 
 // 重载
-
 function reverse (x: number): number; // 函数的定义
 function reverse (y: string): string; // 函数的定义
 function reverse (x: number | string): string | number { // 函数的实现
