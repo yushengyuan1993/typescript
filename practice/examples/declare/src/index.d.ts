@@ -81,3 +81,39 @@ declare namespace NAMESPACE {
  * @description 6. ----------------------------------------------------------------------------
  * @description 声明 嵌套的命名空间
  */
+declare namespace Apple {
+  function ajax (url: string, settings: any): void;
+  namespace fn {
+    function extend (o: object): void;
+  }
+}
+
+
+/**
+ * @description 7. ----------------------------------------------------------------------------
+ * @description interface 和 type
+ * @description 用于声明一个全局的接口(对象的类型)或类型
+ */
+interface Banana {
+  method?: 'GET' | 'POST'
+  data?: any
+}
+declare namespace Canana {
+  function fn (url: string, settings?: Banana): void;
+}
+
+
+/**
+ * @description 8. ----------------------------------------------------------------------------
+ * @description 防止命名冲突
+ * // 暴露在最外层的 interface 和 type 会作为全局类型作用于整个项目中
+ * // 我们应该尽可能的减少全局变量的数量，
+ * // 故最好将他们放到 namespace 下。
+ */
+declare namespace Cat {
+  interface AjaxSettings {
+    method?: 'GET' | 'POST'
+    data?: any
+  }
+  function ajax (url: string, settings?: AjaxSettings): void;
+}

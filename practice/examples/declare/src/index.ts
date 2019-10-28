@@ -58,3 +58,29 @@ console.log(NAMESPACE);
 let namespace1 = new NAMESPACE.People('yushengyuan', 'hi');
 console.log(namespace1);
 namespace1.say();
+
+
+console.log('%c # 6. ---------------------------------------------- ', 'background:#EEE');
+Apple.ajax('url', 'json')
+Apple.fn.extend({})
+
+
+console.log('%c # 7. ---------------------------------------------- ', 'background:#EEE');
+let banana: Banana = {
+  method: 'GET',
+  data: {
+    user: 'jack'
+  }
+}
+Canana.fn('/get-userinfo', banana);
+
+
+console.log('%c # 8. ---------------------------------------------- ', 'background:#EEE');
+// 防止命名冲突
+let setttings_cat: Cat.AjaxSettings = {
+  method: 'POST',
+  data: {
+    name: 'nick'
+  }
+};
+Cat.ajax('/get-name', setttings_cat);
