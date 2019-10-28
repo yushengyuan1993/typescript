@@ -84,3 +84,9 @@ let setttings_cat: Cat.AjaxSettings = {
   }
 };
 Cat.ajax('/get-name', setttings_cat);
+
+
+console.log('%c # 9. ---------------------------------------------- ', 'background:#EEE');
+// 声明合并
+Dog('#app')
+Dog.ajax('api/get-userinfo')

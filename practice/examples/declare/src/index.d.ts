@@ -117,3 +117,14 @@ declare namespace Cat {
   }
   function ajax (url: string, settings?: AjaxSettings): void;
 }
+
+
+/**
+ * @description 9. ----------------------------------------------------------------------------
+ * @description 声明合并
+ * 合并多个对象或属性
+ */
+declare function Dog(selector: string): any;
+declare namespace Dog {
+  function ajax(url: string, settings?: any): void;
+}
