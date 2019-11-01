@@ -1,0 +1,31 @@
+/**
+ * @description 枚举
+ * 
+ * 枚举 `enum` 类型用于取值被限定在一定范围内的场景，比如一周只能有七天，颜色限定为红绿蓝等。
+ */
+// 1. 栗子
+enum Weekly { Sun, Mon, Tue, Wen, Thu, Fri, Sat }
+
+console.log(Weekly[0]) // Sun
+console.log(Weekly[3]) // Wen
+console.log(Weekly[6]) // Sat
+
+console.log(Weekly['Sun']) // 0
+console.log(Weekly['Wen']) // 3
+console.log(Weekly['Sat']) // 6
+
+console.log(Weekly) // {"0":"Sun","1":"Mon","2":"Tue","3":"Wen","4":"Thu","5":"Fri","6":"Sat","Sun":0,"Mon":1,"Tue":2,"Wen":3,"Thu":4,"Fri":5,"Sat":6}
+
+// 2. 手动赋值
+enum Color { Red = 3, Green, Blue }
+
+console.log(Color['Red'])   // 3
+console.log(Color['Green']) // 4
+console.log(Color['Blue'])  // 5
+
+console.log(Color[0]) // undefined
+console.log(Color[3]) // Red
+console.log(Color[4]) // Green
+console.log(Color[5]) // Blue
+
+console.log(Color)    // { '3': 'Red', '4': 'Green', '5': 'Blue', Red: 3, Green: 4, Blue: 5 }
