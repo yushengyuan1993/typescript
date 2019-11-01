@@ -29,3 +29,8 @@ console.log(Color[4]) // Green
 console.log(Color[5]) // Blue
 
 console.log(Color)    // { '3': 'Red', '4': 'Green', '5': 'Blue', Red: 3, Green: 4, Blue: 5 }
+
+// 3. 只可以被覆盖
+
+// 4. 手动赋值的 枚举项 可以不是数字，此时需要使用类型断言来让 tsc 无视类型检查（编译出的js仍然是可以使用的）
+enum Grade {  }
