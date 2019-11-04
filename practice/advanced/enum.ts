@@ -34,8 +34,16 @@ console.log('- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // 3. 只可以被覆盖，但是最好不要出现覆盖的情况
 
-// 4. 手动赋值的 枚举项 可以不是数字，此时需要使用类型断言来让 tsc 无视类型检查（编译出的js仍然是可以使用的）
+// 4.1 手动赋值的枚举项可以不是数字，此时需要使用类型断言来让 tsc 无视类型检查（编译出的js仍然是可以使用的）
 enum Days { Sun = 7, Mon, Tue, Wed, Thu, Fri, Sat = <any>'S' }
 console.log(Days)
+
+// 4.2 手动赋值的枚举项也可以为小数或负数，此时后续未手动赋值的项的递增步长仍为 1
+enum Level { One = 3, Two = 1.5, Three, Four }
+console.log(Level)          // {"3":"One","One":3,"Two":1.5,"1.5":"Two","Three":2.5,"2.5":"Three","Four":3.5,"3.5":"Four"}
+console.log(Level['One'])   // 3
+console.log(Level['Two'])   // 1.5
+console.log(Level['Three']) // 2.5
+console.log(Level['Four'])  // 3.5
 
 console.log('- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -')

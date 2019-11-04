@@ -39,7 +39,7 @@ console.log(Color[5]); // Blue
 console.log(Color); // { '3': 'Red', '4': 'Green', '5': 'Blue', Red: 3, Green: 4, Blue: 5 }
 console.log('- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -');
 // 3. 只可以被覆盖，但是最好不要出现覆盖的情况
-// 4. 手动赋值的 枚举项 可以不是数字，此时需要使用类型断言来让 tsc 无视类型检查（编译出的js仍然是可以使用的）
+// 4.1 手动赋值的枚举项可以不是数字，此时需要使用类型断言来让 tsc 无视类型检查（编译出的js仍然是可以使用的）
 var Days;
 (function (Days) {
     Days[Days["Sun"] = 7] = "Sun";
@@ -51,4 +51,17 @@ var Days;
     Days[Days["Sat"] = 'S'] = "Sat";
 })(Days || (Days = {}));
 console.log(Days);
+// 4.2 手动赋值的枚举项也可以为小数或负数，此时后续未手动赋值的项的递增步长仍为 1
+var Level;
+(function (Level) {
+    Level[Level["One"] = 3] = "One";
+    Level[Level["Two"] = 1.5] = "Two";
+    Level[Level["Three"] = 2.5] = "Three";
+    Level[Level["Four"] = 3.5] = "Four";
+})(Level || (Level = {}));
+console.log(Level);
+console.log(Level['One']);
+console.log(Level['Two']);
+console.log(Level['Three']);
+console.log(Level['Four']);
 console.log('- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -');
