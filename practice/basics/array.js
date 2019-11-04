@@ -15,6 +15,7 @@ arr2.push(true);
 arr2.push('hello');
 console.log(arr2);
 console.log('%c # 3. ---------------------------------------------- ', 'background:#EEE');
+// 数组泛型
 var arr3 = [1, 3, 5, 7];
 console.log(arr3);
 console.log('%c # 4. ---------------------------------------------- ', 'background:#EEE');
@@ -29,7 +30,7 @@ var arr6 = [1, 3, '5', 7];
 arr6.push('9');
 console.log(arr6);
 console.log('%c # 7. ---------------------------------------------- ', 'background:#EEE');
-// Array-like Object
+// 类数组 (Array-like Object)
 function fn(arr) {
     var args = arguments;
     console.log('args: ');
@@ -37,3 +38,12 @@ function fn(arr) {
     console.log(arr);
 }
 fn([1, 3, 5, 7]);
+// 等同于
+function sum() {
+    var args = arguments;
+    return args;
+}
+// function xxx (): any {
+//   let args: number[] = arguments;
+//   return args;
+// }

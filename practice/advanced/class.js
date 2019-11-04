@@ -97,4 +97,12 @@ var Car = /** @class */ (function () {
 /**
  * @description readonly 只读属性关键字，只允许出现在属性声明或索引签名中。
  */
-console.log('1.1. ---------------------------------------------------------------------------');
+console.log('2.1. ---------------------------------------------------------------------------');
+var Computer = /** @class */ (function () {
+    function Computer(brand) {
+        this.brand = brand;
+    }
+    return Computer;
+}());
+var pc = new Computer('lenovo');
+console.log(pc.brand); // 

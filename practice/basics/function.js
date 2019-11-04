@@ -26,7 +26,7 @@ console.log(_sum3);
 console.log('%c # 4. ---------------------------------------------- ', 'background:#EEE');
 var fn1;
 fn1 = function (s, t) {
-    return s == t;
+    return s === t;
 };
 // 类型“1”的参数不能赋给类型“string”的参数。
 // fn1('str', 1);

@@ -12,7 +12,9 @@ var __assign = (this && this.__assign) || function () {
 var tom = {
     name: 'Tom',
     age: 25,
-    gender: 'male'
+    gender: 'male',
+    // grade: true, // error
+    grade: 3
 };
 var _age = tom.age; // number
 var _name = tom.name; // string
@@ -25,7 +27,14 @@ var cat = {
     age: 2,
     height: 36
 };
-// cat.name = 'dog';  
+// cat.name = 'dog';  赋值是会报错
 // Cannot assign to 'name' because it is a read-only property.
 var _catName = cat.name;
 console.log(_catName);
+/**
+ * @description summary
+ *
+ * 1. 定义的变量中的属性必须和接口中定义的属性数量一致，如果需要不一致，可以使用可选属性（?:）。
+ * 2. 可选属性，该属性可以不存在。
+ * 3. 任意属性，可使接口有任意属性。
+ */ 
