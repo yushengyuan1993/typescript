@@ -164,6 +164,7 @@ myGenericsNumber.add = (x, y) => {
  * 当使用泛型时没有在代码中直接指定类型参数，从实际参数中也无法推测出时，
  * 这个默认类型就会起作用。
  */
+console.log('6. ---------------------------------------------------------------------------')
 function doCreateArray<T = string>(length: number, value: T): Array<T> {
 
   let result: T[] = [];
