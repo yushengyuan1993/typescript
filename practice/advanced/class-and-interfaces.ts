@@ -17,7 +17,7 @@
  * 这时候如果有另一个类，车，也有报警器的功能，
  * 就可以考虑把报警器提取出来，作为一个接口，防盗门和车都去实现它。
  */
-console.log('1. ---------------------------------------------------------------------------')
+console.log('1.1. ---------------------------------------------------------------------------')
 interface Alarm {
   alert();
 }
@@ -37,3 +37,99 @@ class Car implements Alarm {
     console.log('Car alert');
   }
 }
+
+console.log('1.2. ---------------------------------------------------------------------------')
+// 1.2. 一个类可以实现多个接口
+interface Movement {
+  speaking();
+}
+
+interface Expression {
+  smiling();
+  crying();
+}
+
+// Person 类同时实现了 Movement 和 Expression 接口
+class Person implements Movement, Expression {
+  public name: string;
+
+  constructor (name: string) {
+    this.name = name;
+  }
+
+  speaking () {
+    console.log(`${this.name} is speaking!`);
+  }
+  smiling () {
+    console.log(`${this.name} is smiling!`);
+  }
+  crying () {
+    console.log(`${this.name} is crying!`);
+  }
+}
+
+let sb = new Person('jack');
+sb.speaking();
+sb.smiling();
+sb.crying();
+
+/**
+ * @description 2. 接口继承接口
+ */
+console.log('2.1. ---------------------------------------------------------------------------')
+interface Jack {
+  speaking();
+}
+
+interface Son extends Jack {
+  crying();
+  smiling();
+}
+
+/**
+ * @description 3. 接口继承类
+ */
+console.log('3.1. ---------------------------------------------------------------------------')
+class Point {
+  x: number;
+  y: number;
+}
+
+interface Point3d extends Point {
+  z: number;
+}
+
+let point3d: Point3d = { x: 2, y: 1, z: 3 }
+
+/**
+ * @description 4. 混合类型
+ */
+console.log('4.1. ---------------------------------------------------------------------------')
+// 4.1. 使用接口的方式来定义一个函数需要符合的形状：
+interface SearchFunc {
+  (source: string, subString: string): boolean;
+}
+
+let mySearch: SearchFunc;
+mySearch = (source: string, subString: string) => {
+  return source.search(subString) !== -1;
+}
+
+// 4.2. 有时候，一个函数还可以有自己的属性和方法：
+interface Counter {
+  (start: number): string;
+  interval: number;
+  reset(): void;
+}
+
+let getCounter = (): Counter => {
+  let counter = <Counter>function (start: number) {};
+  counter.interval = 123;
+  counter.reset = () => {};
+  return counter;
+}
+
+let c = getCounter();
+c(10);
+c.reset();
+c.interval = 5;

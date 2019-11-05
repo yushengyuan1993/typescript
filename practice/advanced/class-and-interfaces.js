@@ -29,7 +29,7 @@ var __extends = (this && this.__extends) || (function () {
  * 这时候如果有另一个类，车，也有报警器的功能，
  * 就可以考虑把报警器提取出来，作为一个接口，防盗门和车都去实现它。
  */
-console.log('1. ---------------------------------------------------------------------------');
+console.log('1.1. ---------------------------------------------------------------------------');
 var Door = /** @class */ (function () {
     function Door() {
     }
@@ -53,3 +53,56 @@ var Car = /** @class */ (function () {
     };
     return Car;
 }());
+console.log('1.2. ---------------------------------------------------------------------------');
+// Person 类同时实现了 Movement 和 Expression 接口
+var Person = /** @class */ (function () {
+    function Person(name) {
+        this.name = name;
+    }
+    Person.prototype.speaking = function () {
+        console.log(this.name + " is speaking!");
+    };
+    Person.prototype.smiling = function () {
+        console.log(this.name + " is smiling!");
+    };
+    Person.prototype.crying = function () {
+        console.log(this.name + " is crying!");
+    };
+    return Person;
+}());
+var sb = new Person('jack');
+sb.speaking();
+sb.smiling();
+sb.crying();
+/**
+ * @description 2. 接口继承接口
+ */
+console.log('2.1. ---------------------------------------------------------------------------');
+/**
+ * @description 3. 接口继承类
+ */
+console.log('3.1. ---------------------------------------------------------------------------');
+var Point = /** @class */ (function () {
+    function Point() {
+    }
+    return Point;
+}());
+var point3d = { x: 2, y: 1, z: 3 };
+/**
+ * @description 4. 混合类型
+ */
+console.log('4.1. ---------------------------------------------------------------------------');
+var mySearch;
+mySearch = function (source, subString) {
+    return source.search(subString) !== -1;
+};
+var getCounter = function () {
+    var counter = function (start) { };
+    counter.interval = 123;
+    counter.reset = function () { };
+    return counter;
+};
+var c = getCounter();
+c(10);
+c.reset();
+c.interval = 5;
