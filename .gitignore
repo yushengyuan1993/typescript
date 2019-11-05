@@ -60,5 +60,5 @@ typings/
 # next.js build output
 .next
 
-practice/basics/*.js
-practice/advanced/*.js
+# practice/basics/*.js
+# practice/advanced/*.js
