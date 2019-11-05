@@ -1,9 +1,9 @@
 /**
- * @description 类
+ * @description class 类
  */
 
 /**
- * @description 1. 访问修饰符(Access Modifiers)
+ * @description 1. Access Modifiers 访问修饰符
  * @param // 1.1. public 修饰的属性或方法是公有的，可以在任何地方被访问到，默认所有的属性和方法都是 public 的；
  * @param // 1.2. private 修饰的属性或方法是私有的，不能在声明它的类的外部访问；
  * @param // 1.3. protected 修饰的属性或方法是受保护的，它和 private 类似，区别是它的子类中也是允许访问的。
@@ -102,10 +102,10 @@ class Car {
 }
 
 /**
- * @description readonly 只读属性关键字，只允许出现在属性声明或索引签名中。
+ * @description 2. readonly 只读属性
  */
 console.log('2.1. ---------------------------------------------------------------------------')
-
+// 2.1 只读属性关键字，只允许出现在属性声明或索引签名中。
 class Computer {
   readonly brand: string;
 
@@ -114,4 +114,85 @@ class Computer {
   }
 }
 let pc = new Computer('lenovo')
-console.log(pc.brand) // 
+console.log(pc.brand) // lenovo
+// pc.brand = 'hp' // Cannot assign to 'brand' because it is a read-only property.
+
+console.log('2.2. ---------------------------------------------------------------------------')
+// 2.2 如果 readonly 和其他访问修饰符同事存在的话，需要写在其后面
+class Mobile {
+  public readonly brand: string;
+
+  public constructor (public readonly price: number) {
+    this.price = price;
+  }
+}
+
+/**
+ * @description 3. abstract 抽象类
+ */
+console.log('3. ---------------------------------------------------------------------------')
+/**
+ * 1. abstract 用于定义抽象类和其中的抽象方法；
+ * 2. 抽象类不允许被实例化；
+ * 3. 抽象类中的抽象方法必须被子类实现；
+ */
+
+console.log('3.1. ---------------------------------------------------------------------------')
+abstract class Subject {
+  public name: string;
+
+  public constructor (name?: string) {
+    this.name = name;
+  }
+
+  // 1.1. 方法“sayName”不能具有实现，因为它标记为抽象。
+  // public abstract sayName () {
+  //   return this.name
+  // }
+
+  // 1.2. 抽象方法
+  public abstract sayName();
+
+  public getName () {
+    return this.name;
+  }
+}
+// 1.3. 无法创建抽象类的实例。
+// let art = new Subject('art')
+
+console.log('3.2. ---------------------------------------------------------------------------')
+// 3. 抽象类中的抽象方法必须被子类实现。
+class Chinese extends Subject { // 非抽象类“Chinese”不会实现继承自“Subject”类的抽象成员“sayName”。
+  constructor (name?: string) {
+    super(name);
+  }
+
+  // 1.1. 在子类中实现抽象类中的抽象方法
+  public sayName () {
+    console.log(`你好, ${this.name}`)
+  }
+}
+
+let chinese = new Chinese('《春江花月夜》');
+chinese.sayName();
+
+
+/**
+ * @description 4. 类的类型
+ */
+console.log('4. ---------------------------------------------------------------------------')
+// 4. 给类加上 TS 类型很简单，与接口类似；
+class Framework {
+  public name: string;
+
+  constructor (name: string) {
+    this.name = name;
+  }
+
+  getName (): string {
+    return `this is ${this.name}`;
+  }
+}
+
+let angular: Framework = new Framework('angular');
+console.log(angular.getName());
