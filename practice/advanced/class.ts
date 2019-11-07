@@ -12,7 +12,7 @@ console.log('1.1. --------------------------------------------------------------
 
 class Animal {
   
-  public constructor (name?, age?, gender?) {
+  public constructor (name?:string, age?:number, gender?:string) {
     this.name = name;
     this.age = age;
     this.gender = gender;
@@ -48,7 +48,7 @@ let b = new Animal(null, 18, 'male')
  * @description 使用 private 修饰的属性或方法，在子类中也是不允许访问的，但使用 protected 修饰，则允许在子类中访问。
  */
 class Cat extends Animal {
-  constructor (name?, age?, gender?) {
+  constructor (name?: string, age?: number, gender?: string) {
     super(name, age, gender);
   }
 
@@ -76,7 +76,7 @@ class Person {
   // }
 
   // 4.2.
-  protected constructor (name?) {
+  protected constructor (name?: string) {
     this.name = name;
   }
 }
@@ -84,7 +84,7 @@ class Person {
 // let jack = new Person('jack'); // 4.1. 类“Person”的构造函数是私有的，仅可在类声明中访问。
 
 class Rack extends Person { // 4.2. 允许被继承
-  constructor (name?) {
+  constructor (name?: string) {
     super(name);
   }
 }
@@ -109,7 +109,7 @@ console.log('2.1. --------------------------------------------------------------
 class Computer {
   readonly brand: string;
 
-  public constructor (brand?:string) {
+  public constructor (brand?: string) {
     this.brand = brand;
   }
 }
