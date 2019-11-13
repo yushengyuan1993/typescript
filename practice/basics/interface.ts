@@ -43,6 +43,31 @@ let cat: Animal = {
 let _catName = cat.name;
 console.log(_catName);
 
+/**
+ * @description 可索引类型
+ * 
+ * 可索引类型具有一个索引签名，他描述了对象索引的类型，还有相应的索引返回值的类型
+ */
+interface Email {
+  [name: string]: string
+}
+interface User {
+  name: string,
+  age?: number,
+  readonly gender: string,
+  greeter: (w: string) => string,
+  email: Email
+}
+const jack: User = {
+  name: 'jack',
+  age: 18,
+  gender: 'female',
+  greeter: function (v) { return v },
+  email: {
+    google: 'jack@gmail.com'
+  }
+}
+
 
 /**
  * @description summary

@@ -4,7 +4,9 @@
   "description": "typescript 初体验",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "build:w": "tsc -w"
   },
   "repository": {
     "type": "git",
@@ -18,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/yushengyuan1993/typescript/issues"
   },
-  "homepage": "https://github.com/yushengyuan1993/typescript#readme"
+  "homepage": "https://github.com/yushengyuan1993/typescript#readme",
+  "devDependencies": {
+    "typescript": "^3.7.2"
+  }
 }

@@ -158,7 +158,7 @@ abstract class Subject {
   }
 }
 // 1.3. 无法创建抽象类的实例。
-// let art = new Subject('art')
+// let art = new Subject('art') // error: square
 
 console.log('3.2. ---------------------------------------------------------------------------')
 // 3. 抽象类中的抽象方法必须被子类实现。
