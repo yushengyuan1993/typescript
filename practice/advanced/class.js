@@ -27,6 +27,7 @@ var Animal = /** @class */ (function () {
         this.name = name;
         this.age = age;
         this.gender = gender;
+        this.person = name + " is a " + age + " years old " + gender;
     }
     Animal.prototype.getPrivateName = function () {
         return this.age; // 自己可以访问
@@ -34,13 +35,13 @@ var Animal = /** @class */ (function () {
     return Animal;
 }());
 console.log('1.2. ---------------------------------------------------------------------------');
-var a = new Animal('Jack');
+var a = new Animal('Jack', 22, 'Lady');
 console.log(a.name); // Jack
-a.name = 'Tom';
+// a.name = 'Tom'
 console.log(a.name); // Tom
+var f = new Animal('Mick', 18, 'Gentemen');
+// console.log(f.age) // 属性“age”为私有属性，只能在类“Person”中访问。
 console.log('1.3. ---------------------------------------------------------------------------');
-var b = new Animal(null, 18, 'male');
-// console.log(b.age) // 属性“age”为私有属性，只能在类“Person”中访问。
 /**
  * @description 使用 private 修饰的属性或方法，在子类中也是不允许访问的，但使用 protected 修饰，则允许在子类中访问。
  */
@@ -62,38 +63,38 @@ console.log('1.4. --------------------------------------------------------------
  * @description 1. 当构造函数被修饰为 private 时， 该类不允许被继承或实例化。
  * @description 2. 当构造函数被修饰为 protected 时， 该类不允许被继承。
  */
-var Person = /** @class */ (function () {
+var Someone = /** @class */ (function () {
     // 4.1.
     // private constructor (name?) {
     //   this.name = name;
     // }
     // 4.2.
-    function Person(name) {
+    function Someone(name) {
         this.name = name;
     }
-    return Person;
+    return Someone;
 }());
-// class Jack extends Person { }  // 4.1. 无法扩展类“Person”。类构造函数标记为私有。
-// let jack = new Person('jack'); // 4.1. 类“Person”的构造函数是私有的，仅可在类声明中访问。
+// class Jack extends Someone { }  // 4.1. 无法扩展类“Person”。类构造函数标记为私有。
+// let jack = new Someone('jack'); // 4.1. 类“Person”的构造函数是私有的，仅可在类声明中访问。
 var Rack = /** @class */ (function (_super) {
     __extends(Rack, _super);
     function Rack(name) {
         return _super.call(this, name) || this;
     }
     return Rack;
-}(Person));
-// let rack = new Person('rack') // 4.2. 不允许被实例化（类“Person”的构造函数是受保护的，仅可在类声明中访问。）
+}(Someone));
+// let rack = new Someone('rack') // 4.2. 不允许被实例化（类“Person”的构造函数是受保护的，仅可在类声明中访问。）
 console.log('1.5. ---------------------------------------------------------------------------');
 /**
  * @description 修饰符还可以使用在构造函数的参数中，等同于类中定义的该属性，使代码更简洁。
  */
-var Car = /** @class */ (function () {
+var Pc = /** @class */ (function () {
     // public brand: string;
-    function Car(brand) {
+    function Pc(brand) {
         this.brand = brand;
         this.brand = brand;
     }
-    return Car;
+    return Pc;
 }());
 /**
  * @description 2. readonly 只读属性
@@ -114,6 +115,7 @@ console.log('2.2. --------------------------------------------------------------
 var Mobile = /** @class */ (function () {
     function Mobile(price) {
         this.price = price;
+        this.brand = 'nokia';
         this.price = price;
     }
     return Mobile;

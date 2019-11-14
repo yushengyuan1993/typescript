@@ -84,7 +84,9 @@ console.log('2.1. --------------------------------------------------------------
  */
 console.log('3.1. ---------------------------------------------------------------------------');
 var Point = /** @class */ (function () {
-    function Point() {
+    function Point(x, y) {
+        this.x = x;
+        this.y = y;
     }
     return Point;
 }());
@@ -93,8 +95,8 @@ var point3d = { x: 2, y: 1, z: 3 };
  * @description 4. 混合类型
  */
 console.log('4.1. ---------------------------------------------------------------------------');
-var mySearch;
-mySearch = function (source, subString) {
+var oSearch;
+oSearch = function (source, subString) {
     return source.search(subString) !== -1;
 };
 var getCounter = function () {

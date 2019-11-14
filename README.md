@@ -1,3 +1,3 @@
-#### typescript 初体验
+#### typescript
 
 - [typescript](http://www.typescriptlang.org/)

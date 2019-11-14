@@ -11,7 +11,7 @@ console.log('1. ----------------------------------------------------------------
 // 使用重载定义多个函数类型
 function reverse (x: string): number;
 function reverse (x: number): string;
-function reverse (x: number | string): number | string {
+function reverse (x: number | string): number | string | null {
 
   if (typeof x === 'number') {
     return Number(x.toString().split('').reverse().join(''));
@@ -20,6 +20,8 @@ function reverse (x: number | string): number | string {
   if (typeof x === 'string') {
     return x.split('').reverse().join('');
   }
+
+  return null;
 
 }
 console.log( reverse('hello') ); // olleh

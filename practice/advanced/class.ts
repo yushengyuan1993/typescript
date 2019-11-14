@@ -11,13 +11,9 @@
 console.log('1.1. ---------------------------------------------------------------------------')
 
 class Animal {
-  
-  public constructor (name?:string, age?:number, gender?:string) {
-    this.name = name;
-    this.age = age;
-    this.gender = gender;
-  }
 
+  public person: string;
+  
   // public
   public name: string;
 
@@ -27,6 +23,14 @@ class Animal {
   // protected
   protected gender: string;
 
+  constructor (name: string, age: number, gender: string) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+
+    this.person = `${name} is a ${age} years old ${gender}`;
+  }
+
   public getPrivateName () {
     return this.age; // 自己可以访问
   }
@@ -34,21 +38,21 @@ class Animal {
 }
 console.log('1.2. ---------------------------------------------------------------------------')
 
-let a = new Animal('Jack')
+let a = new Animal('Jack', 22, 'Lady')
 console.log(a.name) // Jack
-a.name = 'Tom'
+// a.name = 'Tom'
 console.log(a.name) // Tom
 
-console.log('1.3. ---------------------------------------------------------------------------')
+let f = new Animal('Mick', 18, 'Gentemen')
+// console.log(f.age) // 属性“age”为私有属性，只能在类“Person”中访问。
 
-let b = new Animal(null, 18, 'male')
-// console.log(b.age) // 属性“age”为私有属性，只能在类“Person”中访问。
+console.log('1.3. ---------------------------------------------------------------------------')
 
 /**
  * @description 使用 private 修饰的属性或方法，在子类中也是不允许访问的，但使用 protected 修饰，则允许在子类中访问。
  */
 class Cat extends Animal {
-  constructor (name?: string, age?: number, gender?: string) {
+  constructor (name: string, age: number, gender: string) {
     super(name, age, gender);
   }
 
@@ -67,7 +71,7 @@ console.log('1.4. --------------------------------------------------------------
  * @description 1. 当构造函数被修饰为 private 时， 该类不允许被继承或实例化。
  * @description 2. 当构造函数被修饰为 protected 时， 该类不允许被继承。
  */
-class Person {
+class Someone {
   public name: string;
 
   // 4.1.
@@ -76,25 +80,25 @@ class Person {
   // }
 
   // 4.2.
-  protected constructor (name?: string) {
+  protected constructor (name: string) {
     this.name = name;
   }
 }
-// class Jack extends Person { }  // 4.1. 无法扩展类“Person”。类构造函数标记为私有。
-// let jack = new Person('jack'); // 4.1. 类“Person”的构造函数是私有的，仅可在类声明中访问。
+// class Jack extends Someone { }  // 4.1. 无法扩展类“Person”。类构造函数标记为私有。
+// let jack = new Someone('jack'); // 4.1. 类“Person”的构造函数是私有的，仅可在类声明中访问。
 
-class Rack extends Person { // 4.2. 允许被继承
-  constructor (name?: string) {
+class Rack extends Someone { // 4.2. 允许被继承
+  constructor (name: string) {
     super(name);
   }
 }
-// let rack = new Person('rack') // 4.2. 不允许被实例化（类“Person”的构造函数是受保护的，仅可在类声明中访问。）
+// let rack = new Someone('rack') // 4.2. 不允许被实例化（类“Person”的构造函数是受保护的，仅可在类声明中访问。）
 
 console.log('1.5. ---------------------------------------------------------------------------')
 /**
  * @description 修饰符还可以使用在构造函数的参数中，等同于类中定义的该属性，使代码更简洁。
  */
-class Car {
+class Pc {
   // public brand: string;
   public constructor (public brand: string) {
     this.brand = brand;
@@ -109,7 +113,7 @@ console.log('2.1. --------------------------------------------------------------
 class Computer {
   readonly brand: string;
 
-  public constructor (brand?: string) {
+  public constructor (brand: string) {
     this.brand = brand;
   }
 }
@@ -120,7 +124,7 @@ console.log(pc.brand) // lenovo
 console.log('2.2. ---------------------------------------------------------------------------')
 // 2.2 如果 readonly 和其他访问修饰符同事存在的话，需要写在其后面
 class Mobile {
-  public readonly brand: string;
+  public readonly brand = 'nokia';
 
   public constructor (public readonly price: number) {
     this.price = price;
@@ -141,7 +145,7 @@ console.log('3.1. --------------------------------------------------------------
 abstract class Subject {
   public name: string;
 
-  public constructor (name?: string) {
+  public constructor (name: string) {
     this.name = name;
   }
 
@@ -151,7 +155,7 @@ abstract class Subject {
   // }
 
   // 1.2. 抽象方法
-  public abstract sayName();
+  public abstract sayName(): void;
 
   public getName () {
     return this.name;
@@ -163,7 +167,7 @@ abstract class Subject {
 console.log('3.2. ---------------------------------------------------------------------------')
 // 3. 抽象类中的抽象方法必须被子类实现。
 class Chinese extends Subject { // 非抽象类“Chinese”不会实现继承自“Subject”类的抽象成员“sayName”。
-  constructor (name?: string) {
+  constructor (name: string) {
     super(name);
   }
 

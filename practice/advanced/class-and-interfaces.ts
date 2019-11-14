@@ -41,12 +41,12 @@ class Car implements Alarm {
 console.log('1.2. ---------------------------------------------------------------------------')
 // 1.2. 一个类可以实现多个接口
 interface Movement {
-  speaking();
+  speaking(): void;
 }
 
 interface Expression {
-  smiling();
-  crying();
+  smiling(): void;
+  crying(): void;
 }
 
 // Person 类同时实现了 Movement 和 Expression 接口
@@ -78,12 +78,12 @@ sb.crying();
  */
 console.log('2.1. ---------------------------------------------------------------------------')
 interface Jack {
-  speaking();
+  speaking(): void;
 }
 
 interface Son extends Jack {
-  crying();
-  smiling();
+  crying(): void;
+  smiling(): void;
 }
 
 /**
@@ -93,6 +93,11 @@ console.log('3.1. --------------------------------------------------------------
 class Point {
   x: number;
   y: number;
+
+  constructor (x: number, y: number) {
+    this.x = x;
+    this.y = y;
+  }
 }
 
 interface Point3d extends Point {
@@ -110,8 +115,8 @@ interface SearchFunc {
   (source: string, subString: string): boolean;
 }
 
-let mySearch: SearchFunc;
-mySearch = (source: string, subString: string) => {
+let oSearch: SearchFunc;
+oSearch = (source: string, subString: string) => {
   return source.search(subString) !== -1;
 }
 

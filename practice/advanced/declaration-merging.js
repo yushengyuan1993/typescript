@@ -12,6 +12,7 @@ function reverse(x) {
     if (typeof x === 'string') {
         return x.split('').reverse().join('');
     }
+    return null;
 }
 console.log(reverse('hello')); // olleh
 console.log(reverse(10086)); // 68001
