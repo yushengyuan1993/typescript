@@ -21,7 +21,7 @@ function sum2 (x: number, y: number): number {
 console.log('%c # 3. ---------------------------------------------- ', 'background:#EEE');
 
 let sum3 = (arr: number[]): number => {
-  let n: number = null;
+  let n: number = 0;
   arr.forEach((el) => {
     n += el;
   });
@@ -63,8 +63,8 @@ function buildName (firstName: string, lastName?: string): string {
 let tomcat = buildName('Tom', 'Cat');
 console.log(tomcat);
 
-let tom = buildName('Tom');
-console.log(tom);
+let tom1 = buildName('Tom');
+console.log(tom1);
 
 console.log('%c # 6. ---------------------------------------------- ', 'background:#EEE');
 
@@ -97,9 +97,9 @@ console.log(arr7);
 console.log('%c # 8. ---------------------------------------------- ', 'background:#EEE');
 
 // 重载
-function reverse (x: number): number; // 函数的定义
-function reverse (y: string): string; // 函数的定义
-function reverse (x: number | string): string | number { // 函数的实现
+function reverse1 (x: number): number; // 函数的定义
+function reverse1 (y: string): string; // 函数的定义
+function reverse1 (x: number | string): string | number { // 函数的实现
   if (typeof x === 'number') {
     return Number(x.toString().split('').reverse().join(''));
   } else if (typeof x === 'string') {
@@ -108,8 +108,8 @@ function reverse (x: number | string): string | number { // 函数的实现
     return x;
   }
 }
-let res1 = reverse(2019);
-console.log(res1);
+let res7 = reverse1(2019);
+console.log(res7);
 
-let res2 = reverse('上海自来水来自海上.');
-console.log(res2);
+let res8 = reverse1('上海自来水来自海上.');
+console.log(res8);

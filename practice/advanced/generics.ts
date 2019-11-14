@@ -147,8 +147,10 @@ console.log( myCreateArray(3, 'x') ); // [ 'x', 'x', 'x' ]
 console.log('5.1. ---------------------------------------------------------------------------')
 // 5.1. 与泛型接口类似，泛型也可以用于类的类型定义中：
 class GenericsNumber<T> {
-  zeroValue: T;
-  add: (x: T, y: T) => T;
+  zeroValue!: T;
+  // add: (x: T, y: T) => T;
+  add!: (x: T, y: T) => T;
+  // add: ((x: T, y: T) => T) | undefined;
 }
 
 let myGenericsNumber = new GenericsNumber<number>();

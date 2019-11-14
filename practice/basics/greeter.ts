@@ -1,7 +1,7 @@
-function greeter(person: string) {
+function greeter1(person: string) {
   return "Hello, " + person;
 }
 
 let user = "Guys!";
 
-document.write(greeter(user));
+document.write(greeter1(user));

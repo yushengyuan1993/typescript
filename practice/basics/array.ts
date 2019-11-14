@@ -63,7 +63,7 @@ function fn (arr: Array<number>): void {
 }
 fn([1, 3, 5, 7]);
 // 等同于
-function sum () {
+function add () {
   let args: {
     [index: number]: number;
     length: number;

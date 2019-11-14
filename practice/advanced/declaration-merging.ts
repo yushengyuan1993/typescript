@@ -64,16 +64,16 @@ interface Car {
 
 console.log('2.3. ---------------------------------------------------------------------------')
 // 2.3. 接口中的方法的合并，与函数的合并一样：
-interface Fruit {
+interface Vegetable {
   price: number;
   alert(v: string): string;
 }
-interface Fruit {
+interface Vegetable {
   weight: number;
   alert(s: string, t: number): string;
 }
 // 相当于
-interface Fruit {
+interface Vegetable {
   price: number;
   weight: number;
   alert(v: string): string;

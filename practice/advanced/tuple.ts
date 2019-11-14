@@ -8,14 +8,16 @@ let tom: [string, number] = ['Tom', 18];
 
 // 2.
 let cat: [string, number];
-cat[0] = 'Jack';
-cat[1] = 20;
-cat[0].slice(1);
-cat[1].toFixed(1);
+// cat[0] = 'Jack';
+// cat[1] = 20;
+// cat[0].slice(1);
+// cat[1].toFixed(1);
+cat = ['Jack', 20]
 
 // 3.
 let dog: [string, number];
-dog[0] = 'Snoopy';
+// dog[0] = 'Snoopy';
+dog = ['Snoopy', 12]
 
 // 4. 直接对元组类型的变量进行初始化或者赋值时，需要提供所有元组类型中指定的项
 let fox: [string, number];

@@ -1,9 +1,9 @@
-interface Person {
+interface Person2 {
   firstName: string;
   lastName: string;
 }
 
-function greeter(person: Person) {
+function greeter(person: Person2) {
   return "hi, " + person.firstName + " " + person.lastName;
 }
 
