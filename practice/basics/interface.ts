@@ -44,6 +44,21 @@ let _catName = cat1.name;
 console.log(_catName);
 
 /**
+ * @description 函数类型
+ */
+interface LoginFunc {
+  (username: string, password: string): boolean;
+}
+let myLogin: LoginFunc;
+myLogin = (username: string, password: string): boolean => {
+  
+  let res = username.length + password.length;
+
+  return res > 12;
+}
+myLogin('yushare', '123456');
+
+/**
  * @description 可索引类型
  * 
  * 可索引类型具有一个索引签名，他描述了对象索引的类型，还有相应的索引返回值的类型

@@ -41,7 +41,7 @@ class Car implements Alarm {
 console.log('1.2. ---------------------------------------------------------------------------')
 // 1.2. 一个类可以实现多个接口
 interface Movement {
-  speaking(): void;
+  running(): void;
 }
 
 interface Expression {
@@ -57,8 +57,8 @@ class Person implements Movement, Expression {
     this.name = name;
   }
 
-  speaking () {
-    console.log(`${this.name} is speaking!`);
+  running () {
+    console.log(`${this.name} is running!`);
   }
   smiling () {
     console.log(`${this.name} is smiling!`);
@@ -69,7 +69,7 @@ class Person implements Movement, Expression {
 }
 
 let sb = new Person('jack');
-sb.speaking();
+sb.running();
 sb.smiling();
 sb.crying();
 
@@ -78,7 +78,7 @@ sb.crying();
  */
 console.log('2.1. ---------------------------------------------------------------------------')
 interface Jack {
-  speaking(): void;
+  running(): void;
 }
 
 interface Son extends Jack {

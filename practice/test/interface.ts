@@ -1,6 +1,6 @@
 interface SquareConfig {
-  color?: string,
-  width?: number
+  color?: string;
+  width?: number;
 }
 
 function createSquare (config: SquareConfig): { color: string, area: number } {
@@ -13,11 +13,11 @@ function createSquare (config: SquareConfig): { color: string, area: number } {
   return newSquare;
 }
 
-let aSquare = createSquare({ color: 'black' })
+let aSquare = createSquare({ color: 'black' });
 
-// let bSquare = createSquare({ colour: 'red' }) // 报错：
+// let bSquare = createSquare({ colour: 'red' }); // 报错：
 // 类型“{ colour: string; }”的参数不能赋给类型“SquareConfig”的参数。
 // 对象文字只能指定已知的属性，但“colour”中不存在类型“SquareConfig”。是否要写入 color?
 
-let cSquare = createSquare(<SquareConfig>{ colour: 'green' })  // 类型断言
-let dSquare = createSquare({ colour: 'blue' } as SquareConfig) // 类型断言
+let cSquare = createSquare(<SquareConfig>{ colour: 'green' });  // 1. 类型断言
+let dSquare = createSquare({ colour: 'blue' } as SquareConfig); // 2. 类型断言
