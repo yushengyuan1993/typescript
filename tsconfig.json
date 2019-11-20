@@ -61,7 +61,8 @@
   },
   "include": [
     "./practice/basics/*.ts",
-    "./practice/advanced/*.ts"
+    "./practice/advanced/*.ts",
+    "./practice/test/*.ts"
   ],
   "exclude": [
     "node_modules",
