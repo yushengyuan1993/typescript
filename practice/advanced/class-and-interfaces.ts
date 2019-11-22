@@ -80,11 +80,19 @@ console.log('2.1. --------------------------------------------------------------
 interface Jack {
   running(): void;
 }
-
-interface Son extends Jack {
+interface Mick {
+  name: string;
+}
+interface Son extends Jack, Mick {
   crying(): void;
   smiling(): void;
+  gender: string
 }
+let son = <Son>{};
+son.name = 'annie';
+son.gender = 'female';
+son.running = () => {};
+// ......
 
 /**
  * @description 3. 接口继承类
@@ -116,7 +124,7 @@ interface SearchFunc {
 }
 
 let oSearch: SearchFunc;
-oSearch = (source: string, subString: string) => {
+oSearch = (source, subString) => { // 接口处已经定义了类型，此处可省略
   return source.search(subString) !== -1;
 }
 

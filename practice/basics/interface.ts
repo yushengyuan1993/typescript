@@ -58,11 +58,33 @@ myLogin = (username: string, password: string): boolean => {
 }
 myLogin('yushare', '123456');
 
+let hisLogin: LoginFunc;
+// 1. 函数类型的参数名不需要与接口里定义的名字相匹配；
+// 2. 类型检查时，要求 对应位置 上的参数类型是兼容的；
+// 3. 如果不指定类型，`TS` 会推断参数类型，因为函数直接赋值给了 `LoginFunc` 类型变量；
+// hisLogin = (name, pwd) => {
+hisLogin = (name: string, pwd: string): boolean => {
+  
+  let res = name.length + pwd.length;
+
+  return res > 12;
+}
+hisLogin('ysy', '111111');
+
 /**
  * @description 可索引类型
  * 
  * 可索引类型具有一个索引签名，他描述了对象索引的类型，还有相应的索引返回值的类型
  */
+
+// 接口 StringArray 具有索引签名，这个索引签名表示了当用 number 去索引 StringArray 时会得到 string 类型的返回值
+interface StringArray {
+  [index: number]: string
+};
+let aArr: StringArray;
+aArr = ['apple', 'banana'];
+let apple: string = aArr[0];
+
 interface Email {
   [name: string]: string
 }
@@ -83,6 +105,25 @@ const jack: User = {
   }
 }
 
+interface Browser {
+  readonly [index: number]: string;
+}
+let _browser: Browser = ['chrome', 'firefox'];
+
+class _Browser {
+  name: string;
+
+  constructor (name: string) {
+    this.name = name;
+  }
+}
+class Firefox extends _Browser {
+
+}
+interface List {
+  [x: number]: _Browser;
+  [x: string]: Firefox;
+}
 
 /**
  * @description summary
