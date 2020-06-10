@@ -1,3 +1,1 @@
-#### typescript
-
-- [typescript](http://www.typescriptlang.org/)
+#### [typescript](http://www.typescriptlang.org/) 基础
